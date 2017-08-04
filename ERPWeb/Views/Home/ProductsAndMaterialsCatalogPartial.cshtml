@@ -1,0 +1,54 @@
+﻿
+<!--<div>
+    @Html.ActionLink("Add item", "index", "home", new { id = "additem" }, new { target = "_self", @class = "btn btn-info btn-sm" })
+</div>-->
+
+<div ng-controller="modalcontroller">
+    <div>
+    <button class="btn btn-primary btn-sm" type="button" ng-click="openModal()">Add item</button>
+    <!--<table class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+        <tbody>
+         
+        </tbody>
+    </table>-->
+</div>
+<div>
+    <script type="text/ng-template" id="myModal.html">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="cancel()">&times;</button>
+            <h2 class="modal-title">Add item to catalog</h2>
+        </div>
+        <div class="modal-body">
+            <div>
+              @{Html.RenderPartial("AddProductOrMaterialPartial", new ERPWeb.ViewModels.AddProductOrMaterialViewModel());}
+            </div>
+        </div>
+            </div>
+    </script>
+</div>
+    </div>
+<div ng-controller="ShowPandMController" data-ng-init="loadPandM()">
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in PandM">
+                <td>{{item.Name}}</td>
+                <td>{{item.Type}}</td>
+                <td><button class="btn btn-primary btn-xs" ng-click="viewDetails(item)">Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

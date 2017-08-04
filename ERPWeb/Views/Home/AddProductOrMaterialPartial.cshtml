@@ -1,0 +1,15 @@
+﻿@model ERPWeb.ViewModels.AddProductOrMaterialViewModel
+
+<div id="add-pm-container" ng-controller="AddProductsController" style="height:100%; width:100%" >
+    <div class="tab">
+        <button id="default" class="tablinks" onclick="openTab(event, 'add-material')">Add material</button>
+        <button class="tablinks" onclick="openTab(event, 'add-operation')">Add operation</button>
+    </div>
+
+    @Html.Partial("AddMaterialPartial")
+
+    @Html.Partial("AddOperationPartial")
+</div>
+
+
+<script type="text/javascript" src="~/ProductsScripts/tabs.js"></script>

@@ -1,0 +1,15 @@
+﻿@model ERPWeb.Models.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<h2>AddProduct</h2>
+
+<div>
+   @using (Html.BeginForm("AddProductPost", "Home", FormMethod.Post))
+   {
+        @Html.TextBoxFor(p => p.Name)
+        <input type="submit" />
+   }
+</div>
